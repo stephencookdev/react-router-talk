@@ -1,0 +1,33 @@
+{
+  "name": "react-router-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-presents": "^0.7.10"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "prettier": "1.12.1"
+  },
+  "scripts": {
+    "start": "parcel src/index.html",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephencookdev/react-router-talk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephencookdev/react-router-talk/issues"
+  },
+  "homepage": "https://github.com/stephencookdev/react-router-talk#readme"
+}
