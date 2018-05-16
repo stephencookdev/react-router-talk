@@ -19,7 +19,7 @@ export default () => (
         <li>They can also be shown for a range</li>
       </Step>
       <Step index={5}>
-        <iframe src="/#/examples" />
+        <iframe src="/#/examples/example1" />
       </Step>
     </ul>
   </ContentSlide>
