@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Presentation from "./Presentation";
+import App from "./App";
 
-ReactDOM.render(<Presentation />, document.getElementById("mount"));
+ReactDOM.render(<App />, document.getElementById("mount"));

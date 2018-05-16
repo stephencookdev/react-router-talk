@@ -18,6 +18,9 @@ export default () => (
       <Step index={4} maxIndex={5}>
         <li>They can also be shown for a range</li>
       </Step>
+      <Step index={5}>
+        <iframe src="/#/examples" />
+      </Step>
     </ul>
   </ContentSlide>
 );
