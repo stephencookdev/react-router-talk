@@ -1,0 +1,66 @@
+.subtitle {
+	font-size: 2rem;
+	opacity: 0.5;
+}
+
+.center {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+.middle {
+	display: flex;
+	align-items: center;
+}
+
+.me {
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+
+	svg, img {
+		margin-right: 1rem;
+	}
+}
+.twitter {
+	font-size: 2rem;
+}
+
+.sidebyside {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.fadeGroup {
+	position: relative;
+}
+.fadeEnter,
+.fadeEnterActive,
+.fadeExit,
+.fadeExitActive {
+	transition: 0.3s ease opacity;
+}
+.fadeFixEnter,
+.fadeFixEnterActive,
+.fadeFixExit,
+.fadeFixExitActive {
+	transition: 3s ease opacity;
+}
+.fadeEnter,
+.fadeFixEnter {
+	opacity: 0;
+}
+.fadeEnterActive,
+.fadeFixEnterActive {
+	opacity: 1;
+}
+.fadeExitActive {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	height: 100% !important;
+}
+.fadeFixExitActive {
+	opacity: 0;
+}

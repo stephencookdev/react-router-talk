@@ -1,0 +1,51 @@
+.custom-slide {
+	background: #282a36;
+	color: #f8f8f2;
+	width: 100%;
+	height: 100%;
+	line-height: 1.5;
+	overflow: hidden;
+
+	h1 {
+		border-bottom: 0.25rem solid currentColor;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		font-size: 4rem;
+		line-height: 1.2;
+	}
+
+	ul {
+		font-size: 2rem;
+	}
+
+	hr {
+		border-top: 0;
+		width: 50%;
+	}
+
+	code {
+		background: #222;
+		border: 1px solid #111;
+		padding: 4px 8px;
+	}
+
+	:global {
+		.ReactCodeMirror .cm-s-reactpresents.CodeMirror {
+			height: fit-content;
+			width: fit-content;
+			zoom: 1.5;
+		}
+	}
+}
+
+.title-slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+
+	h1 {
+		padding-right: 0 !important;
+	}
+}

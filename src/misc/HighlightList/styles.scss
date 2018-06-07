@@ -1,0 +1,8 @@
+.list li {
+	opacity: 0.5;
+	transition: 0.4s ease opacity;
+
+	&.active {
+		opacity: 1;
+	}
+}

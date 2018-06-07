@@ -1,0 +1,14 @@
+.animatable-fade {
+  background: inherit;
+  will-change: opacity;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+
+  &.in {
+    opacity: 1;
+  }
+
+  &.absolute {
+    position: absolute;
+  }
+}

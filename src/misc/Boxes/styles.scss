@@ -1,0 +1,12 @@
+.centerBoxes {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90%;
+}
+.box {
+	border: 2px solid #111;
+	padding: 16px 32px;
+	font-size: 24px;
+	color: #111;
+}
