@@ -1,0 +1,54 @@
+$ruler-color: rgba(255,255,255, 0.8);
+
+.ruler {
+	width: 300px;
+	height: 1px;
+	background: $ruler-color;
+	color: $ruler-color;
+	position: relative;
+	font-size: 12px;
+}
+.ruler[data-width="2"] {
+	width: 600px;
+}
+
+.tick {
+	position: absolute;
+	height: 6px;
+	width: 1px;
+	background: $ruler-color;
+	bottom: 0;
+}
+
+.pin {
+	position: absolute;
+	top: -7px;
+	left: 0;
+	border: 0 solid transparent;
+	border-width: 10px 5px;
+	margin-left: -5px;
+	color: #dd2828;
+	border-bottom-color: currentColor;
+	border-radius: 30%;
+	z-index: 1;
+}
+
+.start,
+.end {
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.start {
+	left: -2px;
+}
+.end {
+	right: -2px;
+}
+.xAxisLabel {
+	position: absolute;
+	top: -12px;
+	right: -12px;
+	font-size: 14px;
+	font-weight: 900;
+}

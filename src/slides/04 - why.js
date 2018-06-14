@@ -16,7 +16,7 @@ export default () => (
     <HighlightList items={["Cognitive load", "Swish", "But moderation!"]} />
 
     <div className={styles.center}>
-      <FaderSwitch uniqKey={location} order={(a, b) => a.localeCompare(b)}>
+      <FaderSwitch order={(a, b) => a.localeCompare(b)}>
         <Route
           path="/(.*)/1"
           render={() => (

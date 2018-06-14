@@ -22,7 +22,10 @@ export default class FadeOut extends React.Component {
     const prevUniqId = getUniqId(prevProps);
     const uniqId = getUniqId(this.props);
 
-    if (prevUniqId !== uniqId) {
+    if (prevUniqId === uniqId) {
+      if (this.state.curChild !== this.props.children)
+        this.setState({ curChild: this.props.children });
+    } else {
       if (uniqId === this.state.prevUniqId) {
         // This means that we're going back to the route we're trying to animate
         // away from. This probably means that the navigation got cancelled

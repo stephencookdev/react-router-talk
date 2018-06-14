@@ -1,0 +1,102 @@
+.rulerBoxContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 750px;
+	margin: 16px auto;
+}
+
+.aBox,
+.bBox {
+	background: white;
+}
+.aBox {
+	animation: a-box-zoom-out 6s linear infinite;
+}
+.bBox {
+	animation: b-box-zoom-in 6s linear infinite;
+}
+
+.trueBRuler {
+	margin-left: 300px;
+}
+
+.trueAPin {
+	animation: true-a-move 6s linear infinite;
+}
+.trueBPin {
+	animation: true-b-move 6s linear infinite;
+}
+.fakeAPin {
+	animation: fake-a-move 6s linear infinite;
+}
+.fakeBPin {
+	animation: fake-b-move 6s linear infinite;
+}
+
+$red-tick: #dd2828;
+$green-flash: #28dd28;
+@keyframes true-a-move {
+	33.33% {
+		left: 100%;
+		color: $red-tick;
+		transform: scale(1);
+	}
+	33.34% {
+		left: 100%;
+		color: $green-flash;
+		transform: scale(3);
+	}
+	43.34% {
+		left: 100%;
+		color: $red-tick;
+		transform: scale(1);
+	}
+	100% { left: 100% }
+}
+@keyframes true-b-move {
+	33.33% {
+		left: 0%;
+		color: $red-tick;
+		transform: scale(1);
+	}
+	33.34% {
+		left: 0%;
+		color: $green-flash;
+		transform: scale(3);
+	}
+	43.34% {
+		color: $red-tick;
+		transform: scale(1);
+	}
+	66.67% { left: 100%; }
+	100% { left: 100%; }
+}
+@keyframes fake-a-move {
+	33.33% { left: 100%; }
+	100% { left: 100%; }
+}
+@keyframes fake-b-move {
+	0% {
+		left: 0%;
+		opacity: 0.5;
+	}
+	33.33% {
+		opacity: 0.5;
+	}
+	33.34% {
+		opacity: 1;
+	}
+	66.67% { left: 100%; }
+	100% { left: 100%; }
+}
+@keyframes a-box-zoom-out {
+	33.33% { transform: scale(0); }
+	100% { transform: scale(0); }
+}
+@keyframes b-box-zoom-in {
+	0% { transform: scale(0); }
+	33.33% { transform: scale(0); }
+	66.67% { transform: scale(1); }
+	100% { transform: scale(1); }
+}
