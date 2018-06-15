@@ -9,8 +9,8 @@ export default () => (
     <span className={classNames(styles.me, styles.twitter)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="10vh"
+        height="10vh"
         viewBox="0 0 24 24"
         fill="currentColor"
         stroke="none"
@@ -24,7 +24,7 @@ export default () => (
     <hr />
 
     <span className={styles.me}>
-      <img src={onfidoLogo} alt="Onfido" style={{ height: "2rem" }} />
+      <img src={onfidoLogo} alt="Onfido" style={{ height: "5vh" }} />
       https://onfido.com/careers/
     </span>
   </CustomSlide>

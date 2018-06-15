@@ -1,22 +1,35 @@
 import React from "react";
 import { Step } from "react-presents";
+import { Route, Switch } from "react-router-dom";
 import CustomSlide from "../misc/CustomSlide";
-import Fader from "../misc/FadeOut/Fader";
+import FadeOut from "../misc/FadeOut";
+import { animateSwitch } from "../misc/routerComponents";
+import styles from "./common.scss";
+
+const FaderSwitch = animateSwitch(Switch, FadeOut);
 
 export default () => (
   <CustomSlide>
     <h1>
       <code>TransitionGroup</code>
     </h1>
-    <ul>
-      <li>Keeps rendering "removed" elements</li>
-      <li>Animates in elements upon entry</li>
-      <li>Animates out elements upon exit attempt</li>
-      <Step index={1}>
-        <Fader fade={Fader.IN}>
-          <li>The problem...?</li>
-        </Fader>
-      </Step>
-    </ul>
+    <Step index={0} maxIndex={1}>{""}</Step>
+    <FaderSwitch>
+      <Route path="/(.*)/0" render={() => (
+        <div className={styles.hugetext}>
+          <span className={styles.main}>Renders old children</span>
+          &
+          <span className={styles.main}>Animates in new children</span>
+          &
+          <span className={styles.main}>Animates out old children</span>
+        </div>
+      )} />
+
+      <Route path="/(.*)/1" render={() => (
+        <div className={styles.hugetext}>
+          <span className={styles.main}>The problem...?</span>
+        </div>
+      )} />
+    </FaderSwitch>
   </CustomSlide>
 );
