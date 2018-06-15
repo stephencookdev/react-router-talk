@@ -64,12 +64,12 @@ export default class GoalSlide extends React.Component {
 
           <FakeBrowser
             urlMap={{
-              "#/2/0": "https://mysite.com/box/a",
-              "#/2/1": "https://mysite.com/box/b",
-              "#/2/2": "https://mysite.com/box/c",
-              "#/2/3": "https://mysite.com/box/a",
-              "#/2/4": "https://mysite.com/box/b",
-              "#/2/5": "https://mysite.com/box/c"
+              "#/10/0": "https://mysite.com/box/a",
+              "#/10/1": "https://mysite.com/box/b",
+              "#/10/2": "https://mysite.com/box/c",
+              "#/10/3": "https://mysite.com/box/a",
+              "#/10/4": "https://mysite.com/box/b",
+              "#/10/5": "https://mysite.com/box/c"
             }}
           >
             <Switch>

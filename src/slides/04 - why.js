@@ -1,11 +1,11 @@
 import React from "react";
 import { Step } from "react-presents";
 import { Route, Switch } from "react-router-dom";
+import classNames from "classnames";
 import { animateSwitch } from "../misc/routerComponents";
 import CustomSlide from "../misc/CustomSlide";
 import SlideOut from "../misc/SlideOut";
 import FadeOut from "../misc/FadeOut";
-import HighlightList from "../misc/HighlightList";
 import styles from "./common.scss";
 
 const FaderSwitch = animateSwitch(Switch, FadeOut);
@@ -13,10 +13,27 @@ const FaderSwitch = animateSwitch(Switch, FadeOut);
 export default () => (
   <CustomSlide>
     <h1>Why?</h1>
-    <HighlightList items={["Cognitive load", "Swish", "But moderation!"]} />
 
-    <div className={styles.center}>
+    <Step index={0} maxIndex={3}>
+      {""}
+    </Step>
+    <div className={styles.centerWithHeader}>
       <FaderSwitch order={(a, b) => a.localeCompare(b)}>
+        <Route
+          path="/(.*)/0"
+          render={() => (
+            <div
+              className={classNames(styles.hugeText, styles.centerWithHeader)}
+            >
+              <span className={styles.main}>Cognitive load</span>
+              &
+              <span className={styles.main}>Swish</span>
+              &
+              <span className={styles.main}>Moderation</span>
+            </div>
+          )}
+        />
+
         <Route
           path="/(.*)/1"
           render={() => (

@@ -1,0 +1,43 @@
+$width: 50px;
+$height: 25px;
+
+.checkbox {
+	width: #{$width + 2px};
+	height: #{$height + 2px};
+	border: 1px solid #222;
+	background: rgba(#222, 0.5);
+	border-radius: #{$height / 2};
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	box-shadow: 0 0 3px rgba(#222 ,0.4);
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		transition: 0.4s transform ease;
+	}
+	&:before {
+		width: $width;
+		height: $height;
+		left: -$width;
+		background: #f92672;
+	}
+	&:after {
+		width: $height;
+		height: $height;
+		border-radius: 100%;
+		left: 0;
+		background: #bbb;
+		box-shadow:
+			0 0 16px rgba(#222, 0.5),
+			inset 0 0 2px rgba(#222, 0.4);
+	}
+	&.checked:before,
+	&.checked:after {
+		transform: translateX(100%);
+	}
+}

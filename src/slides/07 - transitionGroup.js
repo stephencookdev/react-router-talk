@@ -1,6 +1,7 @@
 import React from "react";
 import { Step } from "react-presents";
 import { Route, Switch } from "react-router-dom";
+import classNames from "classnames";
 import CustomSlide from "../misc/CustomSlide";
 import FadeOut from "../misc/FadeOut";
 import { animateSwitch } from "../misc/routerComponents";
@@ -13,23 +14,27 @@ export default () => (
     <h1>
       <code>TransitionGroup</code>
     </h1>
-    <Step index={0} maxIndex={1}>{""}</Step>
-    <FaderSwitch>
-      <Route path="/(.*)/0" render={() => (
-        <div className={styles.hugetext}>
-          <span className={styles.main}>Renders old children</span>
-          &
-          <span className={styles.main}>Animates in new children</span>
-          &
-          <span className={styles.main}>Animates out old children</span>
-        </div>
-      )} />
+    <Step index={0} maxIndex={1}>
+      {""}
+    </Step>
+    <div className={classNames(styles.hugeText, styles.centerWithHeader)}>
+      <FaderSwitch>
+        <Route
+          path="/(.*)/0"
+          render={() => (
+            <div className={styles.flexDown}>
+              <span className={styles.main}>Renders old children</span> &
+              <span className={styles.main}>Animates in new children</span> &
+              <span className={styles.main}>Animates out old children</span>
+            </div>
+          )}
+        />
 
-      <Route path="/(.*)/1" render={() => (
-        <div className={styles.hugetext}>
-          <span className={styles.main}>The problem...?</span>
-        </div>
-      )} />
-    </FaderSwitch>
+        <Route
+          path="/(.*)/1"
+          render={() => <span className={styles.main}>The problem...?</span>}
+        />
+      </FaderSwitch>
+    </div>
   </CustomSlide>
 );

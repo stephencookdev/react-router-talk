@@ -21,6 +21,8 @@
 	hr {
 		border-top: 0;
 		width: 50%;
+		border-color: currentColor;
+		border-style: solid;
 	}
 
 	code {
@@ -48,4 +50,10 @@
 	h1 {
 		padding-right: 0 !important;
 	}
+}
+
+.custom-slide + div {
+	// this is the react-presents `TouchNav`, and I can't see that there's another
+	// way to disable it :/
+	display: none;
 }

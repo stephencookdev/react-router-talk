@@ -26,17 +26,7 @@ const recommendedCode = `<Route render={({ location }) => (
 export default () => (
   <CustomSlide>
     <h1>The Solution</h1>
-    <ul>
-      <li>react-transition-group</li>
-      <li>
-        <code>Transition</code> for animating elements
-      </li>
-      <li>
-        <code>TransitionGroup</code> for holding onto elements
-      </li>
-    </ul>
-
-    <div className={styles.sidebyside}>
+    <div className={classNames(styles.centerWithHeader, styles.sidebyside)}>
       <Code value={recommendedCode} options={{ mode: "javascript" }} />
 
       <FakeBrowser
