@@ -96,17 +96,32 @@ const slideOutCodeSwap = `swapChildren = () => {
   });
 }`;
 
+const animateSwitchCode = `const animateSwitch = (CustomSwitch, AnimatorComponent) => ({
+  children,
+}) => (
+  <Route
+    render={({ location }) => (
+      <AnimatorComponent uniqKey={location.pathname}>
+        <CustomSwitch location={location}>{children}</CustomSwitch>
+      </AnimatorComponent>
+    )}
+  />
+);
+
+const SwitchWithSlide = animateSwitch(Switch, SlideOut);`;
+
 const codeList = [
   { value: slideOutCode, small: true },
   { value: slideOutCodeRender },
   { value: slideOutCodeUpdate },
   { value: slideOutCodeSwap },
-  { value: slideOutCode, small: true }
+  { value: slideOutCode, small: true },
+  { value: animateSwitchCode }
 ];
 
 export default () => (
   <CustomSlide>
-    <Step index={0} maxIndex={codeList.length - 1}>
+    <Step index={0} maxIndex={codeList.length}>
       {""}
     </Step>
 
@@ -125,6 +140,17 @@ export default () => (
           )}
         />
       ))}
+
+      <Route
+        path={`/(.*)/${codeList.length}`}
+        render={() => (
+          <div className={classNames(styles.hugeText, styles.centerCode)}>
+            <a href="https://codesandbox.io/s/1v50l21rv7" target="_blank">
+              https://codesandbox.io/s/1v50l21rv7
+            </a>
+          </div>
+        )}
+      />
     </SliderSwitch>
   </CustomSlide>
 );

@@ -24,8 +24,7 @@ export default () => (
           render={() => (
             <div className={styles.flexDown}>
               <span className={styles.main}>Renders old children</span> &
-              <span className={styles.main}>Animates in new children</span> &
-              <span className={styles.main}>Animates out old children</span>
+              <span className={styles.main}>Animates in new, out old</span>
             </div>
           )}
         />

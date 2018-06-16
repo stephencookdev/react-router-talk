@@ -28,8 +28,6 @@ export default () => (
               <span className={styles.main}>Cognitive load</span>
               &
               <span className={styles.main}>Swish</span>
-              &
-              <span className={styles.main}>Moderation</span>
             </div>
           )}
         />
