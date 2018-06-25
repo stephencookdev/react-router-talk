@@ -14,6 +14,7 @@ import { AToBTransition, AToBFakeTransition } from "../misc/transitionDiagrams";
 import FakeBrowser from "../misc/FakeBrowser";
 import { animateSwitch } from "../misc/routerComponents";
 import FadeOut from "../misc/FadeOut";
+import impossible from "../images/impossible.mp4";
 import styles from "./common.scss";
 
 const FaderSwitch = animateSwitch(Switch, FadeOut);
@@ -76,10 +77,7 @@ export default () => (
           path="/(.*)/6"
           render={() => (
             <video loop={true} autoPlay={true} style={{ maxWidth: "546px" }}>
-              <source
-                src="https://media.giphy.com/media/xTiTntReleqBnhBNwQ/giphy.mp4"
-                type="video/mp4"
-              />
+              <source src={impossible} type="video/mp4" />
             </video>
           )}
         />

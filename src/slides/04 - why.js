@@ -6,6 +6,9 @@ import { animateSwitch } from "../misc/routerComponents";
 import CustomSlide from "../misc/CustomSlide";
 import SlideOut from "../misc/SlideOut";
 import FadeOut from "../misc/FadeOut";
+import distracted from "../images/distracted.gif";
+import fancy from "../images/fancy.gif";
+import calm from "../images/calm.mp4";
 import styles from "./common.scss";
 
 const FaderSwitch = animateSwitch(Switch, FadeOut);
@@ -18,7 +21,7 @@ export default () => (
       {""}
     </Step>
     <div className={styles.centerWithHeader}>
-      <FaderSwitch order={(a, b) => a.localeCompare(b)}>
+      <FaderSwitch>
         <Route
           path="/(.*)/0"
           render={() => (
@@ -32,38 +35,15 @@ export default () => (
           )}
         />
 
-        <Route
-          path="/(.*)/1"
-          render={() => (
-            <video
-              autoPlay={true}
-              loop={true}
-              style={{ maxWidth: "100%", minHeight: "225px" }}
-            >
-              <source type="video/mp4" src="https://i.imgur.com/C4ZYGsz.mp4" />
-            </video>
-          )}
-        />
+        <Route path="/(.*)/1" render={() => <img src={distracted} />} />
 
-        <Route
-          path="/(.*)/2"
-          render={() => (
-            <img src="https://media.giphy.com/media/mpkW4YrPlPCq4/giphy.gif" />
-          )}
-        />
+        <Route path="/(.*)/2" render={() => <img src={fancy} />} />
 
         <Route
           path="/(.*)/3"
           render={() => (
             <video loop={true} autoPlay={true} style={{ maxWidth: "546px" }}>
-              <source
-                src="https://media.tenor.com/videos/1b641acec7081c0f595e94798baaaea4/mp4"
-                type="video/mp4"
-              />
-              <source
-                src="https://media.tenor.com/videos/f255855195c8f0662aad0c74ac9c29bd/webm"
-                type="video/webm"
-              />
+              <source src={calm} type="video/mp4" />
             </video>
           )}
         />
