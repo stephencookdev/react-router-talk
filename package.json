@@ -1,5 +1,5 @@
 {
-  "name": "react-router-talk",
+  "name": "@stephencookdev/react-router-talk",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -12,15 +12,27 @@
     "react-transition-group": "^2.3.1"
   },
   "devDependencies": {
+    "@prerenderer/prerenderer": "^0.7.2",
+    "@prerenderer/renderer-puppeteer": "^0.2.0",
+    "htmlnano": "^0.2.8",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.0",
     "node-sass": "^4.9.0",
+    "ora": "^5.4.0",
     "parcel": "^1.8.1",
+    "parcel-bundler": "^1.12.5",
     "postcss-modules": "^1.1.0",
-    "prettier": "1.12.1"
+    "prettier": "1.12.1",
+    "pretty-ms": "^7.0.1",
+    "sass": "^1.32.8"
   },
+  "files": ["dist/"],
   "scripts": {
     "start": "parcel src/index.html",
+    "build":
+      "NODE_ENV=production PUBLIC_URL=/slides/react-router-talk  node build.js",
+    "clean": "rm -rf dist/",
+    "prepublishOnly": "npm run clean && npm run build",
     "precommit": "lint-staged"
   },
   "lint-staged": {
